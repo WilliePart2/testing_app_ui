@@ -4,6 +4,8 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import { ParametersForm, PaywaysDisplay } from "./modules/parametersForm";
 import { Combinations } from "./modules/combinations";
+import { Payways, PaywaysInfo } from "./modules/paywaysDisplay";
+import { GridMonitor } from "./modules/gridMonitor";
 
 let styles = theme => {
     let commonPadding = `${theme.spacing.unit}px`;
@@ -24,9 +26,9 @@ class App extends Component {
   render() {
       let {classes} = this.props;
       return (
-          <Grid container spacing={16} className={`fullHeight ${classes.mainScreen}`}>
+          <Grid container spacing={8} className={`fullHeight ${classes.mainScreen}`}>
               <Grid item xs={2}>
-                  <Grid direction="column" container spacing={24} className="fullHeight">
+                  <Grid direction="column" container spacing={8} className="fullHeight">
                       <Grid item xs className={classes.zeroGrowItem}>
                           <ParametersForm />
                       </Grid>
@@ -38,10 +40,20 @@ class App extends Component {
                       </Grid>
                   </Grid>
               </Grid>
-              <Grid item xs={10}>
-                  <Paper>
-                      Block 2
-                  </Paper>
+              <Grid item xs={8}>
+                  {/*<Paper>*/}
+                      <GridMonitor />
+                  {/*</Paper>*/}
+              </Grid>
+              <Grid item xs={2}>
+                  <Grid container direction="column" spacing={8} className="fullHeight">
+                      <Grid item xs className={classes.zeroGrowItem}>
+                          <PaywaysInfo />
+                      </Grid>
+                      <Grid item xs className={classes.growItem}>
+                        <Payways />
+                      </Grid>
+                  </Grid>
               </Grid>
           </Grid>
       );

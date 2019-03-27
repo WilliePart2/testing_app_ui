@@ -1,5 +1,5 @@
 import { makePostRequest } from "../../api/core";
-import {SET_ALL_POSSIBLE_COMBINATIONS, SET_COMBINATION_LENGTH} from "./actionTypes";
+import { SET_ACTIVE_ICON_INDEX, SET_ALL_POSSIBLE_COMBINATIONS, SET_COMBINATION_LENGTH } from "./actionTypes";
 
 let setCombinationToStorage = combinations => ({
     type: SET_ALL_POSSIBLE_COMBINATIONS,
@@ -29,5 +29,9 @@ export let getAllCombinationsForIcon = (
 
     dispatch(setCombinationLengthForActiveCombination(combinationLength));
     dispatch(setCombinationToStorage(response.body));
+    dispatch({
+        type: SET_ACTIVE_ICON_INDEX,
+        payload: iconIndex
+    });
     return true;
 };

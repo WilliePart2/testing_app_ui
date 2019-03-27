@@ -1,9 +1,9 @@
 import {makePostRequest} from "../../api/core";
-import {SET_PAYWAYS_FOR_COMBINATION} from "./actionTypes";
+import { SET_ACTIVE_ICON_INDEX, SET_PAYWAYS_FOR_COMBINATION } from "./actionTypes";
 
-let setPaywaysForCombination = grids => ({
+let setPaywaysForCombination = stops => ({
     type: SET_PAYWAYS_FOR_COMBINATION,
-    payload: grids
+    payload: stops
 });
 
 export let getPaywaysForCombination = () => async (dispatch, getState) => {

@@ -1,4 +1,8 @@
-import {SET_ALL_POSSIBLE_COMBINATIONS, SET_COMBINATION_AS_ACTIVE, SET_COMBINATION_LENGTH} from "../actions/actionTypes";
+import {
+    SET_ALL_POSSIBLE_COMBINATIONS,
+    SET_COMBINATION_AS_ACTIVE,
+    SET_COMBINATION_LENGTH
+} from "../actions/actionTypes";
 
 let defaultState = {
     totalCombinationsList: [],
@@ -14,11 +18,17 @@ export let combinationReducer = (state = defaultState, action) => {
                 ...state,
                 totalCombinationsList: [...action.payload]
             };
+        /**
+         * Active combination which we select from computed
+         */
         case SET_COMBINATION_AS_ACTIVE:
             return {
                 ...state,
                 activeCombination: action.payload
             };
+        /**
+         * Length of payway which we compute
+         */
         case SET_COMBINATION_LENGTH:
             return {
                 ...state,

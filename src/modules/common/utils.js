@@ -16,3 +16,23 @@ export let formatReelStop = reelStopsArray => {
 
     return resultStr;
 };
+
+/**
+ *
+ * @param {Array<
+ *  Array<number>
+ * >} grid
+ */
+export let formatGridStops = grid => {
+    return formatReelStop(grid);
+    // let gridString = '';
+    // let tmpStops = [];
+    // for (let i = 0; i < 3; i++) {
+    //     grid.forEach(reelList => {
+    //         tmpStops.push(reelList.shift());
+    //     });
+    //
+    //     gridString += `${formatReelStop(tmpStops)}${i < 3 ? '\n' : ''}`;
+    //     tmpStops = [];
+    // }
+};

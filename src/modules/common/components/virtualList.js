@@ -1,6 +1,6 @@
 import React from 'react';
 import _ from 'prop-types';
-import { List as MUIList, ListItem, ListItemText, Paper, Divider } from '@material-ui/core';
+import { ListItem, ListItemText, Paper } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import { List, AutoSizer } from 'react-virtualized';
 
@@ -25,8 +25,16 @@ function VirtualList({ items, rowHeight, classes, onClick }) {
                         rowCount={items.length}
                         rowHeight={rowHeight}
                         rowRenderer={({index, key, style}) => (
-                            <ListItem key={key} button style={{ ...style}} className={classes.listItem}>
-                                <ListItemText onClick={() => onClick(index)} primary={items[index]}/>
+                            <ListItem
+                                key={key}
+                                button
+                                style={{ ...style }}
+                                className={classes.listItem}
+                            >
+                                <ListItemText
+                                    onClick={() => onClick(index)}
+                                    primary={items[index]}
+                                />
                             </ListItem>
                         )}
                     />
